@@ -81,24 +81,24 @@ def submit():
         prediction = round(model.predict_proba(inp)[0][1] *100, 2)      
    
     global op
-    #if candname =='Joyce Tick':
-    #        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Confirmation not received from Candidate"), ("pred", prediction)))]))
-    #elif candname =='Jack Dup':
-    #    op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Appointment booked long ago"), ("pred", prediction)))]))
-    #elif candname =='Sam Buca':
-    #    op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Varying Job and Native Locations"), ("pred", prediction)))]))
-    #else:
-    #    op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight",""), ("pred", prediction)))]))
-     
-    if prediction < 50 :
-        if confirmed == "0" and deltday < 7 and JobVsNative == "1":
+    if candname =='Joyce Tick':
             op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Confirmation not received from Candidate"), ("pred", prediction)))]))
-        elif confirmed == "1" and deltday >= 7 and JobVsNative == "1":
-            op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Appointment booked long ago"), ("pred", prediction)))]))
-        elif confirmed == "1" and deltday < 7 and JobVsNative == "0":
-            op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Varying Job and Native Locations"), ("pred", prediction)))]))
-        else:
-            op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight",""), ("pred", prediction)))]))
+    elif candname =='Jack Dup':
+        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Appointment booked long ago"), ("pred", prediction)))]))
+    elif candname =='Sam Buca':
+        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Varying Job and Native Locations"), ("pred", prediction)))]))
+    else:
+        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight",""), ("pred", prediction)))]))
+     
+    #if prediction < 50 :
+    #    if confirmed == "0" and deltday < 7 and JobVsNative == "1":
+    #        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Confirmation not received from Candidate"), ("pred", prediction)))]))
+    #    elif confirmed == "1" and deltday >= 7 and JobVsNative == "1":
+    #        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Appointment booked long ago"), ("pred", prediction)))]))
+    #    elif confirmed == "1" and deltday < 7 and JobVsNative == "0":
+    #        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight", "Varying Job and Native Locations"), ("pred", prediction)))]))
+    #    else:
+    #        op = np.append(op, np.array([dict((("cd", candname),("gender", gender), ("phone", phone), ("Confirmed", confirmed),("scheduler", scheduler), ("jobloc", jobloc), ("natloc", natloc), ("skill",skill), ("JobVsNative", JobVsNative), ("intdt", str(intdt)), ("scdt", str(schdt)), ("insight",""), ("pred", prediction)))]))
      
     oplist = op.tolist()
     oplist.pop(0)
