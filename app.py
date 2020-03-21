@@ -279,7 +279,7 @@ def event_calender():
 
     return(jsonify(dlist))
 
-def genmodel():
+"""def genmodel():
     base_dir = os.getcwd()
     data_dir = os.path.join(base_dir, 'Code/RawData')
     #Source File Path
@@ -374,7 +374,7 @@ def genmodel():
     pickle.dump(model_rf, open('model.pkl', 'wb'))
 
 genmodel()   
-
+"""
 
 #@app.route('/refresh', methods=['GET', 'POST'])
 #def refresh():
